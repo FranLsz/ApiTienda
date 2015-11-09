@@ -16,14 +16,7 @@ namespace ApiTienda.Controllers
     public class ProductosController : ApiController
     {
         [Dependency]
-        //private DbContext context;
         public IRepositorio<Producto, ProductoViewModel> repo { get; set; }
-
-        /*public ProductosController()
-        {
-            context = new Tienda15Entities();
-            repo = new RepositorioEntity<Producto, ProductoViewModel>(context);
-        }*/
 
         public ICollection<ProductoViewModel> GetProductos()
         {
@@ -31,7 +24,7 @@ namespace ApiTienda.Controllers
         }
 
         [ResponseType(typeof(ProductoViewModel))]
-        public IHttpActionResult GetProductos(int id)
+        public IHttpActionResult GetProductos([FromUri]int id)
         {
             var data = repo.Get(id);
             //var data = repo.Get(o => o.id.Equals(id));
@@ -42,7 +35,7 @@ namespace ApiTienda.Controllers
         }
 
         [ResponseType(typeof(ProductoViewModel))]
-        public IHttpActionResult PostProductos(ProductoViewModel producto)
+        public IHttpActionResult PostProductos([FromBody]ProductoViewModel producto)
         {
             if (!ModelState.IsValid)
             {
@@ -54,9 +47,8 @@ namespace ApiTienda.Controllers
             return Created("DefaultApi", producto);
         }
 
-        //pendiente
         [ResponseType(typeof(ProductoViewModel))]
-        public IHttpActionResult PutProductos(int id, ProductoViewModel producto)
+        public IHttpActionResult PutProductos([FromUri]int id, [FromBody]ProductoViewModel producto)
         {
             if (!ModelState.IsValid)
             {
@@ -68,7 +60,7 @@ namespace ApiTienda.Controllers
                 return BadRequest();
             }
 
-            if(repo.Get(id)==null)
+            if (repo.Get(id) == null)
                 return NotFound();
 
             repo.Update(producto);
@@ -77,7 +69,7 @@ namespace ApiTienda.Controllers
         }
 
         [ResponseType(typeof(ProductoViewModel))]
-        public IHttpActionResult DeleteProductos(int id)
+        public IHttpActionResult DeleteProductos([FromUri]int id)
         {
             var producto = repo.Get(id);
             if (producto == null)

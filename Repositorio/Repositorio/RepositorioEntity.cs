@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Repositorio.ViewModel;
 
 namespace Repositorio.Repositorio
 {
-    public class RepositorioEntity<TModel, TViewModel> : IRepositorio<TModel, TViewModel> where TModel : class where TViewModel : IViewModel<TModel>, new()
+    public class RepositorioEntity<TModel, TViewModel> : IRepositorio<TModel, TViewModel>
+        where TModel : class
+        where TViewModel : IViewModel<TModel>, new()
     {
 
         private DbContext context;
