@@ -134,6 +134,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BaseRepositorio\BaseRepositorio\BaseRepositorio.csproj">
+      <Project>{76684668-be74-4a01-b795-a7e742c73f5c}</Project>
+      <Name>BaseRepositorio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Repositorio\Repositorio.csproj">
       <Project>{D4DF1B8E-60AF-4CC4-8145-6CD795B999A5}</Project>
       <Name>Repositorio</Name>

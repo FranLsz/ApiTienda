@@ -1,8 +1,9 @@
-﻿using Repositorio.Model;
+﻿using BaseRepositorio.ViewModel;
+using Repositorio.Model;
 
 namespace Repositorio.ViewModel
 {
-    class EtiquetaViewModel : IViewModel<Etiqueta>
+    public class EtiquetaViewModel : IViewModel<Etiqueta>
     {
         public int id { get; set; }
         public string nombre { get; set; }

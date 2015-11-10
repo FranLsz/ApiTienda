@@ -1,4 +1,6 @@
-﻿using Repositorio.Model;
+﻿using BaseRepositorio.ViewModel;
+using Repositorio.Model;
+
 
 namespace Repositorio.ViewModel
 {

@@ -2,7 +2,7 @@ using System.Data.Entity;
 using Microsoft.Practices.Unity;
 using System.Web.Http;
 using Repositorio.Model;
-using Repositorio.Repositorio;
+using BaseRepositorio.Repositorio;
 using Repositorio.ViewModel;
 using Unity.WebApi;
 

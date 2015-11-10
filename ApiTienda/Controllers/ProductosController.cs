@@ -8,7 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.Practices.Unity;
 using Repositorio.Model;
-using Repositorio.Repositorio;
+using BaseRepositorio.Repositorio;
 using Repositorio.ViewModel;
 
 namespace ApiTienda.Controllers
